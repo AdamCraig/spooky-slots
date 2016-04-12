@@ -6,6 +6,9 @@ function Machine () {
   this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
   this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
   this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
+  // this.reel1 = ["pumpkin", "werewolf"];
+  // this.reel2 = ["pumpkin", "werewolf"];
+  // this.reel3 = ["pumpkin", "werewolf"];
 }
  function Player () {
    this.bankRoll = 20;
@@ -25,50 +28,67 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
       winningReel.push(reel3Result);
 
       for (i = 0; i < winningReel.length; i++) {
-        if ( (winningReel[0] === "pumpkin") || (winningReel[1] === "pumpkin") || (winningReel[2] === "pumpkin") ) {
-          newPlayer.bankRoll += 2;
-          winType = "You won $2!";
-          console.log("adding 2");
-      } if ( (winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin") || (winningReel[0] === "pumpkin" && winningReel[2] === "pumpkin") || (winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin") ) {
-          newPlayer.bankroll += 4;
-          winType = "You won $4!";
-          console.log("adding 4");
-      } if ( (winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin") ) {
-          newPlayer.bankroll += 12;
-          winType = "You won $12!";
-      } if ( (winningReel[0] === "candy" && winningReel[1] === "candy" && winningReel[2] === "candy") ) {
-          newPlayer.bankroll += 18;
-          winType = "You won $18!";
-      } if ( (winningReel[0] === "black cat" && winningReel[1] === "black cat" && winningReel[2] === "black cat") ) {
-          newPlayer.bankroll += 36;
-          winType = "You won $36!";
-      } if ( (winningReel[0] === "witch" && winningReel[1] === "witch" && winningReel[2] === "witch") ) {
-          newPlayer.bankroll += 64;
-          winType = "You won $64!";
-      } if ( (winningReel[0] === "ghost" && winningReel[1] === "ghost" && winningReel[2] === "ghost") ) {
-          newPlayer.bankroll += 100;
-          winType = "You won $100!";
-      } if ( (winningReel[0] === "bat" && winningReel[1] === "bat" && winningReel[2] === "bat") ) {
-          newPlayer.bankroll += 175;
-          winType = "You won $175!";
-      } if ( (winningReel[0] === "werewolf" && winningReel[1] === "werewolf" && winningReel[2] === "werewolf") ) {
-          newPlayer.bankroll += 250;
-          winType = "You won $250!";
-      } if ( (winningReel[0] === "vampire" && winningReel[1] === "vampire" && winningReel[2] === "vampire") ) {
-          newPlayer.bankroll += 500;
-          winType = "You won $500!";
-      } if ( (winningReel[0] === "zombie" && winningReel[1] === "zombie" && winningReel[2] === "zombie") ) {
-          newPlayer.bankroll += 1000;
-          winType = "You won $1000!";
-      } if ( (winningReel[0] === "grim reaper" && winningReel[1] === "grim reaper" && winningReel[2] === "grim reaper") ) {
-          newPlayer.bankroll += 10000;
-          winType = "You won $10000!";
-      } else {
-        return false;
-        winType = "No matches. Spin again.";
-      }
+        if (winningReel[0] === "grim reaper" && winningReel[1] === "grim reaper" && winningReel[2] === "grim reaper")  {
+           newPlayer.bankRoll += 10000;
+           winType = "You won $10000!";
+           return true;
+        } else if (winningReel[0] === "zombie" && winningReel[1] === "zombie" && winningReel[2] === "zombie")  {
+            newPlayer.bankRoll += 1000;
+            winType = "You won $1000!";
+            return true;
+        } else if (winningReel[0] === "vampire" && winningReel[1] === "vampire" && winningReel[2] === "vampire")  {
+            newPlayer.bankRoll += 500;
+            winType = "You won $500!";
+            return true;
+        } else if (winningReel[0] === "werewolf" && winningReel[1] === "werewolf" && winningReel[2] === "werewolf") {
+            newPlayer.bankRoll += 250;
+            winType = "You won $250!";
+            return true;
+        } else if (winningReel[0] === "bat" && winningReel[1] === "bat" && winningReel[2] === "bat") {
+            newPlayer.bankRoll += 175;
+            winType = "You won $175!";
+            return true;
+        } else if (winningReel[0] === "ghost" && winningReel[1] === "ghost" && winningReel[2] === "ghost")  {
+            newPlayer.bankRoll += 100;
+            winType = "You won $100!";
+            return true;
+        } else if (winningReel[0] === "witch" && winningReel[1] === "witch" && winningReel[2] === "witch")  {
+            newPlayer.bankRoll += 64;
+            winType = "You won $64!";
+            return true;
+        } else if (winningReel[0] === "black cat" && winningReel[1] === "black cat" && winningReel[2] === "black cat")  {
+            newPlayer.bankRoll += 36;
+            winType = "You won $36!";
+            return true;
+        } else if (winningReel[0] === "candy" && winningReel[1] === "candy" && winningReel[2] === "candy")  {
+            newPlayer.bankRoll += 18;
+            winType = "You won $18!";
+            return true;
+        } else if ( (winningReel[0] === "pumpkin") && (winningReel[1] === "pumpkin") && (winningReel[2] === "pumpkin") ) {
+            newPlayer.bankRoll += 12;
+            winType = "You won $12!";
+            return true;
+        } else if ( (winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin") || (winningReel[0] === "pumpkin" && winningReel[2] === "pumpkin") || (winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin") ) {
+            newPlayer.bankRoll += 4;
+            winType = "You won $4!";
+            return true;
+        } else if (winningReel[0] === "pumpkin") {
+            newPlayer.bankRoll += 2;
+            winType = "You won $2!";
+            return true;
+        } else if (winningReel[1] === "pumpkin") {
+            newPlayer.bankRoll += 2;
+            winType = "You won $2!";
+            return true;
+        } else if (winningReel[2] === "pumpkin") {
+            newPlayer.bankRoll += 2;
+            winType = "You won $2!";
+            return true;
+        } else {
+            return false;
+            winType = "No matches. Spin again.";
+          }
     }
-
     return winType;
 }
 
