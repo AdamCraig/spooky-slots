@@ -128,6 +128,5 @@ $(document).ready(function() {
 
     newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
     console.log(newPlayer.bankRoll);
-
   });
 });
