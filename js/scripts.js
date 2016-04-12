@@ -29,66 +29,57 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
         if (winningReel[0] === "grim reaper" && winningReel[1] === "grim reaper" && winningReel[2] === "grim reaper")  {
            newPlayer.bankRoll += 10000;
            winType = "You won $10000!";
-           return true;
+           return winType;
         } else if (winningReel[0] === "zombie" && winningReel[1] === "zombie" && winningReel[2] === "zombie")  {
             newPlayer.bankRoll += 1000;
             winType = "You won $1000!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "vampire" && winningReel[1] === "vampire" && winningReel[2] === "vampire")  {
             newPlayer.bankRoll += 500;
             winType = "You won $500!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "werewolf" && winningReel[1] === "werewolf" && winningReel[2] === "werewolf") {
             newPlayer.bankRoll += 250;
             winType = "You won $250!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "bat" && winningReel[1] === "bat" && winningReel[2] === "bat") {
             newPlayer.bankRoll += 175;
             winType = "You won $175!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "ghost" && winningReel[1] === "ghost" && winningReel[2] === "ghost")  {
             newPlayer.bankRoll += 100;
             winType = "You won $100!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "witch" && winningReel[1] === "witch" && winningReel[2] === "witch")  {
             newPlayer.bankRoll += 64;
             winType = "You won $64!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "black cat" && winningReel[1] === "black cat" && winningReel[2] === "black cat")  {
             newPlayer.bankRoll += 36;
             winType = "You won $36!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "candy" && winningReel[1] === "candy" && winningReel[2] === "candy")  {
             newPlayer.bankRoll += 18;
             winType = "You won $18!";
-            return true;
+            return winType;
         } else if (winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin")  {
             newPlayer.bankRoll += 12;
             winType = "You won $12!";
-            return true;
+            return winType;
         } else if ((winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin") || (winningReel[0] === "pumpkin" && winningReel[2] === "pumpkin") || (winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin")) {
             newPlayer.bankRoll += 4;
             winType = "You won $4!";
-            return true;
-        } else if (winningReel[0] === "pumpkin") {
+            return winType;
+        } else if ((winningReel[0] === "pumpkin") || (winningReel[1] === "pumpkin") || (winningReel[2] === "pumpkin")) {
             newPlayer.bankRoll += 2;
             winType = "You won $2!";
-            return true;
-        } else if (winningReel[1] === "pumpkin") {
-            newPlayer.bankRoll += 2;
-            winType = "You won $2!";
-            return true;
-        } else if (winningReel[2] === "pumpkin") {
-            newPlayer.bankRoll += 2;
-            winType = "You won $2!";
-            return true;
+            return winType;
         } else {
-            return false;
             winType = "No matches. Spin again.";
+            return winType;
           }
-    }
-    return winType;
-}
+        }
+      }
 
 // User Interface Logic
 
@@ -126,8 +117,9 @@ $(document).ready(function() {
       }
     }
 
-    newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
-    console.log(newPlayer.bankRoll);
+    var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
+    $(".total-bank-roll").text("$" + newPlayer.bankRoll);
+    $(".last-spin-winnings").text(checkCurrentWinAmount);
 
   });
 });
