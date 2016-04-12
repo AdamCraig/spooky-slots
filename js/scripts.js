@@ -6,19 +6,18 @@ function Machine () {
   this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
   this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
   this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
-  // this.reel1 = ["pumpkin", "werewolf"];
-  // this.reel2 = ["pumpkin", "werewolf"];
-  // this.reel3 = ["pumpkin", "werewolf"];
 }
+
  function Player () {
    this.bankRoll = 20;
  }
+
 Machine.prototype.spinReel = function(reel) {
   var reelStop = reel[Math.floor(Math.random() * reel.length)];
   console.log(reelStop);
   return reelStop;
 }
-// Runs through winningReel arrary to check for winning combinations//
+// Runs through winningReel array to check for winning combinations//
 Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result, newPlayer) {
       var winningReel = [];
       var winType = "";
