@@ -47,13 +47,13 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result)
       } if ( (winningReel[0] === "black cat" && winningReel[1] === "black cat" && winningReel[2] === "black cat") ) {
           newPlayer.bankroll += 36;
           winType = "You won $36!";
-      } if ( (winningReel[0] === "witches" && winningReel[1] === "witches" && winningReel[2] === "witches") ) {
+      } if ( (winningReel[0] === "witch" && winningReel[1] === "witch" && winningReel[2] === "witch") ) {
           newPlayer.bankroll += 64;
           winType = "You won $64!";
-      } if ( (winningReel[0] === "ghosts" && winningReel[1] === "ghosts" && winningReel[2] === "ghosts") ) {
+      } if ( (winningReel[0] === "ghost" && winningReel[1] === "ghost" && winningReel[2] === "ghost") ) {
           newPlayer.bankroll += 100;
           winType = "You won $100!";
-      } if ( (winningReel[0] === "bats" && winningReel[1] === "bats" && winningReel[2] === "bats") ) {
+      } if ( (winningReel[0] === "bat" && winningReel[1] === "bat" && winningReel[2] === "bat") ) {
           newPlayer.bankroll += 175;
           winType = "You won $175!";
       } if ( (winningReel[0] === "werewolf" && winningReel[1] === "werewolf" && winningReel[2] === "werewolf") ) {
