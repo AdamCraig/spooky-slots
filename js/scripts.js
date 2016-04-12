@@ -8,7 +8,7 @@ function Machine () {
 }
 
  function Player () {
-   this.bankRoll = 20;
+   this.bankRoll = 3;
  }
 
 Machine.prototype.spinReel = function(reel) {
@@ -91,35 +91,47 @@ $(document).ready(function() {
   $("#spin").click(function(event) {
     event.preventDefault();
 
-    $(".reel1output").empty();
-    $(".reel2output").empty();
-    $(".reel3output").empty();
+    if (newPlayer.bankRoll >= 1) {
+      newPlayer.bankRoll -= 1;
 
-    var reel1Result = newMachine.spinReel(newMachine.reel1);
-    var reel2Result = newMachine.spinReel(newMachine.reel2);
-    var reel3Result = newMachine.spinReel(newMachine.reel3);
+      $(".reel1output").empty();
+      $(".reel2output").empty();
+      $(".reel3output").empty();
 
-    for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-      if (reel1Result === newMachine.symbols[index]) {
-        $(".reel1output").append("<img src='img/" + reel1Result + ".jpg'>");
+      var reel1Result = newMachine.spinReel(newMachine.reel1);
+      var reel2Result = newMachine.spinReel(newMachine.reel2);
+      var reel3Result = newMachine.spinReel(newMachine.reel3);
+
+      for ( index = 0; index <= newMachine.symbols.length; index++ ) {
+        if (reel1Result === newMachine.symbols[index]) {
+          $(".reel1output").append("<img src='img/" + reel1Result + ".jpg'>");
+        }
       }
-    }
 
-    for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-      if (reel2Result === newMachine.symbols[index]) {
-        $(".reel2output").append("<img src='img/" + reel2Result + ".jpg'>");
+      for ( index = 0; index <= newMachine.symbols.length; index++ ) {
+        if (reel2Result === newMachine.symbols[index]) {
+          $(".reel2output").append("<img src='img/" + reel2Result + ".jpg'>");
+        }
       }
-    }
 
-    for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-      if (reel3Result === newMachine.symbols[index]) {
-        $(".reel3output").append("<img src='img/" + reel3Result + ".jpg'>");
+      for ( index = 0; index <= newMachine.symbols.length; index++ ) {
+        if (reel3Result === newMachine.symbols[index]) {
+          $(".reel3output").append("<img src='img/" + reel3Result + ".jpg'>");
+        }
       }
-    }
 
-    var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
-    $(".total-bank-roll").text("$" + newPlayer.bankRoll);
-    $(".last-spin-winnings").text(checkCurrentWinAmount);
+      var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
+      $(".total-bank-roll").text("$" + newPlayer.bankRoll);
+      $(".last-spin-winnings").text(checkCurrentWinAmount);
+    } else {
+      $(".hideWhenCashoutOrBust").fadeOut();
+      $("#results").show();
+      $(".resultCashOut").hide();
+    }
+  });
+
+  $("#play-again").click(function(event) {
+    location.reload();
 
   });
 });

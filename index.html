@@ -14,41 +14,58 @@
     </div>
 
     <div class="container-fluid"> <!-- Container starts here -->
-      <div class="row">
-        <div class="col-xs-4" id="reelColumn1">
-         <h3>Reel 1</h3>
-         <span class="reel1output"></span>
+      <div class="hideWhenCashoutOrBust">
+        <div class="row">
+          <div class="col-xs-4" id="reelColumn1">
+           <h3>Reel 1</h3>
+           <span class="reel1output"></span>
+          </div>
+
+          <div class="col-xs-4" id="reelColumn2">
+           <h3>Reel 2</h3>
+           <span class="reel2output"></span>
+          </div>
+
+          <div class="col-xs-4" id="reelColumn3">
+           <h3>Reel 3</h3>
+           <span class="reel3output"></span>
+          </div>
         </div>
 
-        <div class="col-xs-4" id="reelColumn2">
-         <h3>Reel 2</h3>
-         <span class="reel2output"></span>
-        </div>
+        <div class="row">
 
-        <div class="col-xs-4" id="reelColumn3">
-         <h3>Reel 3</h3>
-         <span class="reel3output"></span>
+          <div class="col-md-4" id="total-bank-roll">
+            <h1>Total Bank Roll</h1>
+            <span class="total-bank-roll">$20</span>
+            <button class="btn btn-success" id="cash-out">Cash Out?</button>
+          </div>
+
+          <div class="col-md-4">
+            <button class="btn btn-danger" id="spin">SPIN</button>
+          </div>
+
+          <div class="col-md-4" id="last-spin-winnings">
+            <h1>Last Spin Winning Amount</h1>
+            <span class="last-spin-winnings"></span>
+          </div>
+
         </div>
       </div>
 
-      <div class="row">
-
-        <div class="col-md-4" id="total-bank-roll">
-          <h1>Total Bank Roll</h1>
-          <span class="total-bank-roll"></span>
+      <div class="row" id="results">
+        <div class="resultBust">
+          <h1>You Bust!</h1>
         </div>
 
-        <div class="col-md-4">
-          <button class="btn btn-danger" id="spin">SPIN</button>
+        <div class="resultCashOut">
+          <h1>Cashing out?</h1>
+          <h1>Looks like you are going home with</h1>
+          <h1>$<span class="finalBankRoll"></span></h1>
         </div>
 
-        <div class="col-md-4" id="last-spin-winnings">
-          <h1>Last Spin Winning Amount</h1>
-          <span class="last-spin-winnings"></span>
-        </div>
-
+        <button class="btn btn-info" id="play-again">Play Again?</button>
       </div>
+
     </div> <!-- Container ends here -->
-
   </body>
 </html>
