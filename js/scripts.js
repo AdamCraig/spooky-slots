@@ -120,13 +120,15 @@ $(document).ready(function() {
         }
       }
 
-      var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
-      $(".total-bank-roll").text("$" + newPlayer.bankRoll);
-      $(".last-spin-winnings").text(checkCurrentWinAmount);
-    } else {
-      $(".hideWhenCashoutOrBust").fadeOut();
-      $("#results").show();
-      $(".resultCashOut").hide();
+      if (newPlayer.bankRoll >= 1) {
+        var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
+        $(".total-bank-roll").text("$" + newPlayer.bankRoll);
+        $(".last-spin-winnings").text(checkCurrentWinAmount);
+      } else {
+        $(".hideWhenCashoutOrBust").hide();
+        $("#results").show();
+        $(".resultCashOut").hide();
+      }
     }
   });
 
@@ -134,4 +136,13 @@ $(document).ready(function() {
     location.reload();
 
   });
+
+  $("#cash-out").click(function(event) {
+    $(".hideWhenCashoutOrBust").hide();
+    $("#results").show();
+    $(".resultBust").hide();
+    $(".finalBankRoll").text("$" + newPlayer.bankRoll);
+    $(".finalBankRoll").show();
+  });
+
 });

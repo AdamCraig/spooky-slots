@@ -15,7 +15,7 @@
 
     <div class="container-fluid"> <!-- Container starts here -->
       <div class="hideWhenCashoutOrBust">
-        <div class="row">
+        <div class="row"> <!-- Row 1 Starts -->
           <div class="col-xs-4" id="reelColumn1">
            <h3>Reel 1</h3>
            <span class="reel1output"></span>
@@ -30,13 +30,13 @@
            <h3>Reel 3</h3>
            <span class="reel3output"></span>
           </div>
-        </div>
+        </div> <!-- Row 1 Ends -->
 
-        <div class="row">
+        <div class="row"> <!-- Row 2 Starts -->
 
           <div class="col-md-4" id="total-bank-roll">
             <h1>Total Bank Roll</h1>
-            <span class="total-bank-roll">$20</span>
+            <h1><span class="total-bank-roll">$20</span><h1>
             <button class="btn btn-success" id="cash-out">Cash Out?</button>
           </div>
 
@@ -49,10 +49,10 @@
             <span class="last-spin-winnings"></span>
           </div>
 
-        </div>
+        </div> <!-- Row 2 Ends -->
       </div>
 
-      <div class="row" id="results">
+      <div class="row" id="results"> <!-- Row 3 Starts -->
         <div class="resultBust">
           <h1>You Bust!</h1>
         </div>
@@ -60,11 +60,11 @@
         <div class="resultCashOut">
           <h1>Cashing out?</h1>
           <h1>Looks like you are going home with</h1>
-          <h1>$<span class="finalBankRoll"></span></h1>
+          <h1><span class="finalBankRoll"></span></h1>
         </div>
 
         <button class="btn btn-info" id="play-again">Play Again?</button>
-      </div>
+      </div> <!-- Row 3 Ends -->
 
     </div> <!-- Container ends here -->
   </body>
