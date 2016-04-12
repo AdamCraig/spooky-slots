@@ -1,0 +1,10 @@
+#reelColumn1, #reelColumn2, #reelColumn3 {
+  height: 400px;
+  border: solid black 2px;
+}
+
+#spin {
+  font-size: 3em;
+  margin-top: 10px;
+  margin-left: 50%;
+}
