@@ -1,6 +1,7 @@
 function Machine () {
   this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkins", "werewolf", "zombies", "vampires", "black cat", "grim reaper"];
   this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkins", "werewolf", "zombies", "vampires", "black cat", "grim reaper"];
+  this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkins", "werewolf", "zombies", "vampires", "black cat", "grim reaper"];
 }
 
 Machine.prototype.spinReel = function(reel) {
@@ -23,7 +24,7 @@ $(document).ready(function() {
 
     $(".reel1output").append(newMachine.spinReel(newMachine.reel1));
     $(".reel2output").append(newMachine.spinReel(newMachine.reel2));
-    // $(".reel3output").append(newMachine.spinReels(reel3));
+    $(".reel3output").append(newMachine.spinReel(newMachine.reel3));
 
   });
 });
