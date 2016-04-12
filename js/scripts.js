@@ -12,6 +12,8 @@ Machine.prototype.spinReel = function(reel) {
 }
 
 Machine.prototype.winningCombo = function() {
+      var winningReel = [];
+      for (i = 0)
 
 }
 
