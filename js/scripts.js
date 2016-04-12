@@ -64,11 +64,11 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
             newPlayer.bankRoll += 18;
             winType = "You won $18!";
             return true;
-        } else if ( (winningReel[0] === "pumpkin") && (winningReel[1] === "pumpkin") && (winningReel[2] === "pumpkin") ) {
+        } else if (winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin")  {
             newPlayer.bankRoll += 12;
             winType = "You won $12!";
             return true;
-        } else if ( (winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin") || (winningReel[0] === "pumpkin" && winningReel[2] === "pumpkin") || (winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin") ) {
+        } else if ((winningReel[0] === "pumpkin" && winningReel[1] === "pumpkin") || (winningReel[0] === "pumpkin" && winningReel[2] === "pumpkin") || (winningReel[1] === "pumpkin" && winningReel[2] === "pumpkin")) {
             newPlayer.bankRoll += 4;
             winType = "You won $4!";
             return true;
