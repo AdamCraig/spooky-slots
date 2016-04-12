@@ -134,7 +134,6 @@ $(document).ready(function() {
 
   $("#play-again").click(function(event) {
     location.reload();
-
   });
 
   $("#cash-out").click(function(event) {
