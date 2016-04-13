@@ -7,9 +7,9 @@ function Machine () {
   this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
 }
 
- function Player () {
-   this.bankRoll = 3;
- }
+function Player () {
+   this.bankRoll = 20;
+}
 
 Machine.prototype.spinReel = function(reel) {
   var reelStop = reel[Math.floor(Math.random() * reel.length)];
@@ -88,13 +88,25 @@ $(document).ready(function() {
   var newMachine = new Machine();
   var newPlayer = new Player();
 
+  var i = 0, howManyTimes = 50;
+
+  function spinFlash() {
+  $(".reel1output").empty();
+  $(".reel1output").append("<img src='img/" + newMachine.symbols[Math.floor(Math.random() * newMachine.symbols.length)] + ".jpg'>");
+  i++;
+    if( i < howManyTimes ){
+      setTimeout( spinFlash, 70 );
+    }
+  }
+
   $("#spin").click(function(event) {
     event.preventDefault();
 
     if (newPlayer.bankRoll >= 1) {
       newPlayer.bankRoll -= 1;
 
-      $(".reel1output").empty();
+      i = 0;
+
       $(".reel2output").empty();
       $(".reel3output").empty();
 
@@ -102,11 +114,10 @@ $(document).ready(function() {
       var reel2Result = newMachine.spinReel(newMachine.reel2);
       var reel3Result = newMachine.spinReel(newMachine.reel3);
 
-      for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-        if (reel1Result === newMachine.symbols[index]) {
-          $(".reel1output").append("<img src='img/" + reel1Result + ".jpg'>");
-        }
-      }
+      spinFlash();
+      setTimeout(function() { $(".reel1output").empty(); $(".reel1output").append("<img src='img/" + reel1Result + ".jpg'>"); }, 3500);
+
+      $(".reel1output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
 
       for ( index = 0; index <= newMachine.symbols.length; index++ ) {
         if (reel2Result === newMachine.symbols[index]) {
