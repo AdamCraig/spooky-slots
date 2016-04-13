@@ -1,6 +1,8 @@
-.jumbotron {
-  text-align: center;
-  background: linear-gradient(black,darkgray,lightgray,white,lightgray,darkgray,black);
+body {
+  font-family: 'Frijole', cursive;
+  background: url(../img/nature-night-dark-tree.jpg);
+  background-size: cover;
+  color: white;
 }
 
 #reelColumn1, #reelColumn2, #reelColumn3 {
@@ -16,15 +18,26 @@
   text-align: center;
 }
 
-body {
-  font-family: 'Frijole', cursive;
-  background: url(../img/nature-night-dark-tree.jpg);
-  background-size: cover;
+.legend {
+  text-align: center;
 }
+
 #spin {
   font-size: 3em;
   margin-top: 10px;
-  margin-left: 50%;
+  background-color: darkgrey;
+  color: #961C08;
+}
+
+#spin:hover {
+  background-color: #961C08;
+  color: black;
+}
+
+#cash-out {
+  font-size: 1em;
+  margin-top: 10px;
+  background-color: #0D5D17;
 }
 
 #play-again {
@@ -37,12 +50,6 @@ body {
   display: none;
 }
 
-.legend {
-  border-style: solid;
-  border-width: thick;
-  border-color: red;
-  width: 800px;
-}
 
 img {
   max-width: 275px;
@@ -50,7 +57,7 @@ img {
   width: auto;
 }
 .col-lg-8 {
-  background-color: #764FE8;
+  background-color: #6726B2;
   margin: 1px;
   width: 200px;
   height: 55px;
@@ -59,7 +66,7 @@ img {
   border-width: medium;
 }
 .col-lg-4 {
-  background-color: #764FE8;
+  background-color: #6726B2;
   font-size: 90%;
   padding-top: 4px;
   margin: 1px;
@@ -70,6 +77,7 @@ img {
   border: solid;
   border-color: black;
   border-width: medium;
+  color: #c7d5d9;
 }
 .slotPayout {
   margin-top: 50px;
@@ -91,4 +99,8 @@ img {
   font-size: 75pt;
   text-align: center;
   color: white;
+}
+
+#last-spin-winnings, #total-bank-roll, #spin-button {
+  text-align: center;
 }
