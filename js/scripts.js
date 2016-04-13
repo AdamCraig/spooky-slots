@@ -145,10 +145,11 @@ $(document).ready(function() {
   $("#spin").click(function(event) {
     event.preventDefault();
 
-    $("#spin").hide().delay(7300).fadeIn();
-    $("#total-bank-roll").hide().delay(7300).fadeIn();
-    $("#last-spin-winnings").hide().delay(7300).fadeIn();
-    $(".legend").slideUp().delay(7300).slideDown();
+    $("#spin").hide().delay(10000).fadeIn();
+    $("#total-bank-roll").hide().delay(10000).fadeIn();
+    $("#last-spin-winnings").hide().delay(10000).fadeIn();
+    $(".legend").slideUp().delay(10000).slideDown();
+    $(".winningsAlert").delay(7300).fadeIn().delay(2700).slideUp();
 
     if (newPlayer.bankRoll >= 1) {
       newPlayer.bankRoll -= 1;
