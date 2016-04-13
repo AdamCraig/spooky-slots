@@ -10,6 +10,7 @@
   background: linear-gradient(black,gray,white,gray,black);
   margin: 3px;
   text-align: center;
+  padding-top: 20px;
 }
 
 .reel3output {
@@ -20,6 +21,7 @@ body {
   font-family: 'Frijole', cursive;
   background: url(../img/nature-night-dark-tree.jpg);
   background-size: cover;
+  color: white;
 }
 #spin {
   font-size: 3em;
@@ -35,13 +37,6 @@ body {
 
 #results {
   display: none;
-}
-
-.legend {
-  border-style: solid;
-  border-width: thick;
-  border-color: red;
-  width: 800px;
 }
 
 img {

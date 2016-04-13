@@ -145,6 +145,11 @@ $(document).ready(function() {
   $("#spin").click(function(event) {
     event.preventDefault();
 
+    $("#spin").hide().delay(7300).fadeIn();
+    $("#total-bank-roll").hide().delay(7300).fadeIn();
+    $("#last-spin-winnings").hide().delay(7300).fadeIn();
+    $(".legend").slideUp().delay(7300).slideDown();
+
     if (newPlayer.bankRoll >= 1) {
       newPlayer.bankRoll -= 1;
 
