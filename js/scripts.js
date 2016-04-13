@@ -3,13 +3,12 @@
 function Machine () {
   this.symbols = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
 
-  this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "candy", "black cat", "black cat"];
+  this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "candy", "black cat", "black cat", "bat", "bat"];
 
-  this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "black cat", "witch"];
+  this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "black cat", "witch", "bat", "bat"];
 
-  this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "skull", "skull", "skull", "pumpkin", "pumpkin", "candy", "black cat", "witch", "zombie"];
+  this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "skull", "skull", "skull", "pumpkin", "pumpkin", "candy", "black cat", "witch", "zombie", "bat", "bat"];
 }
-
  function Player () {
    this.bankRoll = 20;
  }
@@ -23,6 +22,15 @@ Machine.prototype.spinReel = function(reel) {
 Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result, newPlayer) {
       var winningReel = [];
       var winType = "";
+      var audio = new Audio('audio/slot.mp3');
+      var spinReelAudio = new Audio('audio/spinreel.mp3');
+      var skull = new Audio('audio/skull.mp3');
+      var blackCat = new Audio('audio/black cat.mp3');
+      var witch = new Audio('audio/witch.mp3');
+      var vampire = new Audio('audio/vampire.mp3');
+      var zombie = new Audio('audio/zombie.mp3');
+      var ghost = new Audio('audio/ghost.mp3');
+      var zombie = new Audio('audio/zombie.wav');
 
       winningReel.push(reel1Result);
       winningReel.push(reel2Result);
@@ -36,10 +44,12 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
         } else if (winningReel[0] === "zombie" && winningReel[1] === "zombie" && winningReel[2] === "zombie")  {
             newPlayer.bankRoll += 1000;
             winType = "You won $1000!";
+            zombie.play();
             return winType;
         } else if (winningReel[0] === "vampire" && winningReel[1] === "vampire" && winningReel[2] === "vampire")  {
             newPlayer.bankRoll += 500;
             winType = "You won $500!";
+            vampire.play();
             return winType;
         } else if (winningReel[0] === "werewolf" && winningReel[1] === "werewolf" && winningReel[2] === "werewolf") {
             newPlayer.bankRoll += 250;
@@ -52,14 +62,17 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
         } else if (winningReel[0] === "ghost" && winningReel[1] === "ghost" && winningReel[2] === "ghost")  {
             newPlayer.bankRoll += 100;
             winType = "You won $100!";
+            ghost.play();
             return winType;
         } else if (winningReel[0] === "witch" && winningReel[1] === "witch" && winningReel[2] === "witch")  {
             newPlayer.bankRoll += 64;
             winType = "You won $64!";
+            witch.play();
             return winType;
         } else if (winningReel[0] === "black cat" && winningReel[1] === "black cat" && winningReel[2] === "black cat")  {
             newPlayer.bankRoll += 36;
             winType = "You won $36!";
+            blackCat.play();
             return winType;
         } else if (winningReel[0] === "candy" && winningReel[1] === "candy" && winningReel[2] === "candy")  {
             newPlayer.bankRoll += 18;
@@ -76,9 +89,11 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
         } else if ((winningReel[0] === "pumpkin") || (winningReel[1] === "pumpkin") || (winningReel[2] === "pumpkin")) {
             newPlayer.bankRoll += 2;
             winType = "You won $2!";
+            audio.play();
             return winType;
         } else if (winningReel[0] === "skull" && winningReel[1] === "skull" && winningReel[2] === "skull") {
           newPlayer.bankRoll -= (Math.floor(newPlayer.bankRoll * 0.9));
+          skull.play();
           return winType = "You just lost 90% of your bank roll. Go grab yourself a free coffee from the lounge!";
         } else {
             winType = "No matches. Spin again.";
