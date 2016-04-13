@@ -16,9 +16,6 @@
   text-align: center;
 }
 
-#slotWindow {
-}
-
 body {
   font-family: 'Frijole', cursive;
   background: url(../img/nature-night-dark-tree.jpg);
@@ -40,6 +37,13 @@ body {
   display: none;
 }
 
+.legend {
+  border-style: solid;
+  border-width: thick;
+  border-color: red;
+  width: 800px;
+}
+
 img {
   max-width: 275px;
   height: 300px;
@@ -56,10 +60,13 @@ img {
 }
 .col-lg-4 {
   background-color: #764FE8;
+  font-size: 90%;
+  padding-top: 4px;
   margin: 1px;
-  width: 150px;
+  width: 180px;
   height: 55px;
   text-align: center;
+  padding-top: 6px;
   border: solid;
   border-color: black;
   border-width: medium;
