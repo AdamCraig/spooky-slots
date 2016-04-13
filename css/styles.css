@@ -1,15 +1,28 @@
 .jumbotron {
   text-align: center;
+  background: linear-gradient(black,darkgray,lightgray,white,lightgray,darkgray,black);
 }
 
 #reelColumn1, #reelColumn2, #reelColumn3 {
   height: 400px;
-  border: solid black 2px;
-  background-color: gray;
+  border: solid black 5px;
+  border-radius: 5px;
+  background: linear-gradient(black,gray,white,gray,black);
+  margin: 3px;
+  text-align: center;
+}
+
+.reel3output {
+  text-align: center;
+}
+
+#slotWindow {
 }
 
 body {
   font-family: 'Frijole', cursive;
+  background: url(../img/nature-night-dark-tree.jpg);
+  background-size: cover;
 }
 #spin {
   font-size: 3em;
@@ -28,7 +41,7 @@ body {
 }
 
 img {
-  max-width: 300px;
+  max-width: 275px;
   height: 300px;
   width: auto;
 }
@@ -47,7 +60,6 @@ img {
   width: 150px;
   height: 55px;
   text-align: center;
-
   border: solid;
   border-color: black;
   border-width: medium;
@@ -58,7 +70,7 @@ img {
   color: white;
   text-align: center;
 }
-.slotImg{
+.slotImg {
   height: 45px;
   width: 45px;
 }
@@ -72,8 +84,4 @@ img {
   font-size: 75pt;
   text-align: center;
   color: white;
-}
-.jumbotron {
-  background: linear-gradient(black,#400054,#6D00AB,#5000D1,black);
-
 }

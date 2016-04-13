@@ -75,7 +75,7 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
             winType = "You won $2!";
             return winType;
         } else {
-            winType = "No matches. Spin again.";
+            winType = "No winning matches. Spin again.";
             return winType;
           }
         }
@@ -133,32 +133,26 @@ $(document).ready(function() {
       var reel2Result = newMachine.spinReel(newMachine.reel2);
       var reel3Result = newMachine.spinReel(newMachine.reel3);
 
+      // START REEL1 IMAGE DISPLAY
+
       spinFlash1();
-      setTimeout(function() { $(".reel1output").empty(); $(".reel1output").append("<img src='img/" + reel1Result + ".jpg'>"); }, 3500);
+      setTimeout(function() { $(".reel1output").empty(); $(".reel1output").append("<img src='img/" + reel1Result + ".jpg' class='img responsive'>"); }, 3500);
 
       $(".reel1output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
 
+      // START REEL2 IMAGE DISPLAY
+
       spinFlash2();
-      setTimeout(function() { $(".reel2output").empty(); $(".reel2output").append("<img src='img/" + reel2Result + ".jpg'>"); }, 4950);
+      setTimeout(function() { $(".reel2output").empty(); $(".reel2output").append("<img src='img/" + reel2Result + ".jpg' class='img responsive'>"); }, 4950);
 
       $(".reel2output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
 
+      // START REEL3 IMAGE DISPLAY
+
       spinFlash3();
-      setTimeout(function() { $(".reel3output").empty(); $(".reel3output").append("<img src='img/" + reel3Result + ".jpg'>"); }, 6375);
+      setTimeout(function() { $(".reel3output").empty(); $(".reel3output").append("<img src='img/" + reel3Result + ".jpg' class='img responsive'>"); }, 6375);
 
       $(".reel3output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
-
-      // for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-      //   if (reel2Result === newMachine.symbols[index]) {
-      //     $(".reel2output").append("<img src='img/" + reel2Result + ".jpg'>");
-      //   }
-      // }
-      //
-      // for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-      //   if (reel3Result === newMachine.symbols[index]) {
-      //     $(".reel3output").append("<img src='img/" + reel3Result + ".jpg'>");
-      //   }
-      // }
 
       if (newPlayer.bankRoll >= 1) {
         var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
