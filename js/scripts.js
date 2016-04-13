@@ -2,13 +2,16 @@
 
 function Machine () {
   this.symbols = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
-  this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
-  this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
-  this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
+
+  this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "candy", "black cat", "black cat"];
+
+  this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "black cat", "witch"];
+
+  this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "skull", "skull", "skull", "pumpkin", "pumpkin", "candy", "black cat", "witch", "zombie"];
 }
 
  function Player () {
-   this.bankRoll = 3;
+   this.bankRoll = 20;
  }
 
 Machine.prototype.spinReel = function(reel) {
@@ -74,6 +77,9 @@ Machine.prototype.winningCombo = function(reel1Result, reel2Result, reel3Result,
             newPlayer.bankRoll += 2;
             winType = "You won $2!";
             return winType;
+        } else if (winningReel[0] === "skull" && winningReel[1] === "skull" && winningReel[2] === "skull") {
+          newPlayer.bankRoll -= (Math.floor(newPlayer.bankRoll * 0.9));
+          return winType = "You just lost 90% of your bank roll. Go grab yourself a free coffee from the lounge!";
         } else {
             winType = "No matches. Spin again.";
             return winType;
