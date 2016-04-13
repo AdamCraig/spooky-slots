@@ -88,14 +88,34 @@ $(document).ready(function() {
   var newMachine = new Machine();
   var newPlayer = new Player();
 
-  var i = 0, howManyTimes = 50;
+  var reel1Counter = 0, reel1Cycles = 50;
+  var reel2Counter = 0, reel2Cycles = 70;
+  var reel3Counter = 0, reel3Cycles = 90;
 
-  function spinFlash() {
+  function spinFlash1() {
   $(".reel1output").empty();
   $(".reel1output").append("<img src='img/" + newMachine.symbols[Math.floor(Math.random() * newMachine.symbols.length)] + ".jpg'>");
-  i++;
-    if( i < howManyTimes ){
-      setTimeout( spinFlash, 70 );
+  reel1Counter++;
+    if( reel1Counter < reel1Cycles ){
+      setTimeout( spinFlash1, 70 );
+    }
+  }
+
+  function spinFlash2() {
+  $(".reel2output").empty();
+  $(".reel2output").append("<img src='img/" + newMachine.symbols[Math.floor(Math.random() * newMachine.symbols.length)] + ".jpg'>");
+  reel2Counter++;
+    if( reel2Counter < reel2Cycles ){
+      setTimeout( spinFlash2, 70 );
+    }
+  }
+
+  function spinFlash3() {
+  $(".reel3output").empty();
+  $(".reel3output").append("<img src='img/" + newMachine.symbols[Math.floor(Math.random() * newMachine.symbols.length)] + ".jpg'>");
+  reel3Counter++;
+    if( reel3Counter < reel3Cycles ){
+      setTimeout( spinFlash3, 70 );
     }
   }
 
@@ -105,31 +125,40 @@ $(document).ready(function() {
     if (newPlayer.bankRoll >= 1) {
       newPlayer.bankRoll -= 1;
 
-      i = 0;
-
-      $(".reel2output").empty();
-      $(".reel3output").empty();
+      reel1Counter = 0;
+      reel2Counter = 0;
+      reel3Counter = 0;
 
       var reel1Result = newMachine.spinReel(newMachine.reel1);
       var reel2Result = newMachine.spinReel(newMachine.reel2);
       var reel3Result = newMachine.spinReel(newMachine.reel3);
 
-      spinFlash();
+      spinFlash1();
       setTimeout(function() { $(".reel1output").empty(); $(".reel1output").append("<img src='img/" + reel1Result + ".jpg'>"); }, 3500);
 
       $(".reel1output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
 
-      for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-        if (reel2Result === newMachine.symbols[index]) {
-          $(".reel2output").append("<img src='img/" + reel2Result + ".jpg'>");
-        }
-      }
+      spinFlash2();
+      setTimeout(function() { $(".reel2output").empty(); $(".reel2output").append("<img src='img/" + reel2Result + ".jpg'>"); }, 4950);
 
-      for ( index = 0; index <= newMachine.symbols.length; index++ ) {
-        if (reel3Result === newMachine.symbols[index]) {
-          $(".reel3output").append("<img src='img/" + reel3Result + ".jpg'>");
-        }
-      }
+      $(".reel2output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
+
+      spinFlash3();
+      setTimeout(function() { $(".reel3output").empty(); $(".reel3output").append("<img src='img/" + reel3Result + ".jpg'>"); }, 6375);
+
+      $(".reel3output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
+
+      // for ( index = 0; index <= newMachine.symbols.length; index++ ) {
+      //   if (reel2Result === newMachine.symbols[index]) {
+      //     $(".reel2output").append("<img src='img/" + reel2Result + ".jpg'>");
+      //   }
+      // }
+      //
+      // for ( index = 0; index <= newMachine.symbols.length; index++ ) {
+      //   if (reel3Result === newMachine.symbols[index]) {
+      //     $(".reel3output").append("<img src='img/" + reel3Result + ".jpg'>");
+      //   }
+      // }
 
       if (newPlayer.bankRoll >= 1) {
         var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
