@@ -1,10 +1,12 @@
 body {
   font-family: 'Frijole', cursive;
   background: url(../img/nature-night-dark-tree.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
   color: white;
+  background-color: black;
 }
 
 #reelColumn1, #reelColumn2, #reelColumn3 {
