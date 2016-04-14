@@ -3,7 +3,6 @@
   src: url(../fonts/zombiecontrol.ttf)
 }
 
-
 body {
   font-family: 'Frijole', sans-serif;
   background: url(../img/nature-night-dark-tree.jpg);
@@ -25,6 +24,11 @@ body {
   padding-top: 20px;
 }
 
+#reelColumn1 img, #reelColumn2 img, #reelColumn3 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .winningsAlert {
   display: none;
   text-align: center;
@@ -34,6 +38,7 @@ body {
 
 .total-bank-roll {
   color: orange;
+  text-shadow: 10px 10px 10px black;
 }
 
 .reel3output {
@@ -43,6 +48,7 @@ body {
 #last-spin-winnings h2 {
   font-size: 2em;
   color: orange;
+    text-shadow: 10px 10px 10px black;
 }
 
 /*buttons start here*/
@@ -89,16 +95,51 @@ body {
   height: 100px;
   width: 300px;
   background-size: 100% 100%;
-  /*font-size: 3em;
-  margin-top: 10px;
-  margin-left: 50%;*/
 }
 
 /*buttons end here*/
 
+/*results start here*/
+
 #results {
   display: none;
 }
+
+.resultCashOut {
+  text-align: center;
+  margin-top: 700px;
+}
+
+.resultBust {
+  text-align: center;
+  color: #8B0000;
+  font-size: 100pt;
+  margin-top: 700px;
+}
+
+.finalBankRoll {
+  font-size: 50pt;
+  color: #8B0000;
+}
+
+.him {
+  color: white;
+}
+
+#spin-button h3 {
+  font-size: 25pt;
+  text-shadow: 10px 10px 10px black;
+}
+
+#total-bank-roll h1 {
+  text-shadow: 10px 10px 10px black;
+}
+
+#last-spin-winnings {
+  text-shadow: 10px 10px 10px black;
+}
+
+/*results end here*/
 
 img {
   max-width: 275px;
@@ -128,6 +169,7 @@ img {
 
 .container {
   background-image: url(../img/legend.jpg);
+  background-repeat: round;
   border-radius: 10pt;
   text-align: center;
   display: block;
@@ -156,4 +198,5 @@ img {
 
 #last-spin-winnings, #total-bank-roll, #spin-button {
   text-align: center;
+  max-width: 100%;
 }
