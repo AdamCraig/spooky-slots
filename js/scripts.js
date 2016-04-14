@@ -11,9 +11,8 @@ function Machine () {
 }
 
 function Player () {
-   this.bankRoll = 1;
+   this.bankRoll = 10;
 }
-
 
 Machine.prototype.spinReel = function(reel) {
   var reelStop = reel[Math.floor(Math.random() * reel.length)];
