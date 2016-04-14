@@ -1,5 +1,11 @@
+@font-face {
+  font-family: "zombie";
+  src: url(../fonts/zombiecontrol.ttf)
+}
+
+
 body {
-  font-family: 'Frijole', cursive;
+  font-family: 'Frijole', sans-serif;
   background: url(../img/nature-night-dark-tree.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -139,10 +145,11 @@ img {
 }
 
 #h1 {
-  font-size: 75pt;
+  font-family: zombie, sans-serif;
+  font-size: 100pt;
   text-align: center;
   color: white;
-  text-shadow: 10px 10px 10px black;
+  text-shadow: 10px 10px 10px darkred;
   padding-top: 20px;
   padding-bottom: 10px;
 }

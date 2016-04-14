@@ -2,12 +2,56 @@
 
 function Machine () {
   this.symbols = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper"];
-
+  //
   this.reel1 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "candy", "black cat", "black cat", "bat", "bat"];
 
   this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "black cat", "witch", "bat", "bat"];
 
   this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "skull", "skull", "skull", "pumpkin", "pumpkin", "candy", "black cat", "witch", "zombie", "bat", "bat"];
+
+  // this.reel1 = ["skull"];
+  // this.reel2 = ["skull"];
+  // this.reel3 = ["skull"];
+
+  // this.reel1 = ["grim reaper"];
+  // this.reel2 = ["grim reaper"];
+  // this.reel3 = ["grim reaper"];
+  //
+  // this.reel1 = ["candy"];
+  // this.reel2 = ["candy"];
+  // this.reel3 = ["candy"];
+  //
+  // this.reel1 = ["ghost"];
+  // this.reel2 = ["ghost"];
+  // this.reel3 = ["ghost"];
+  // //
+  // this.reel1 = ["bat"];
+  // this.reel2 = ["bat"];
+  // this.reel3 = ["bat"];
+  //
+  // this.reel1 = ["witch"];
+  // this.reel2 = ["witch"];
+  // this.reel3 = ["witch"];
+
+  // this.reel1 = ["pumpkin"];
+  // this.reel2 = ["pumpkin"];
+  // this.reel3 = ["pumpkin"];
+  //
+  // this.reel1 = ["werewolf"];
+  // this.reel2 = ["werewolf"];
+  // this.reel3 = ["werewolf"];
+
+  // this.reel1 = ["zombie"];
+  // this.reel2 = ["zombie"];
+  // this.reel3 = ["zombie"];
+  //
+  // this.reel1 = ["vampire"];
+  // this.reel2 = ["vampire"];
+  // this.reel3 = ["vampire"];
+  //
+  // this.reel1 = ["black cat"];
+  // this.reel2 = ["black cat"];
+  // this.reel3 = ["black cat"];
 }
 
 function Player () {
@@ -17,7 +61,6 @@ function Player () {
 
 Machine.prototype.spinReel = function(reel) {
   var reelStop = reel[Math.floor(Math.random() * reel.length)];
-  console.log(reelStop);
   return reelStop;
 }
 // Runs through winningReel array to check for winning combinations//
