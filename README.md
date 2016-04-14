@@ -12,7 +12,7 @@ elements created almost entirely in JavaScript._
 
 ## Setup/Installation Requirements
 
-* _Viewing the page is easily accomplished by opening the index.html file in any internet browser. _
+* _Viewing the page is easily accomplished by opening the index.html file in any internet browser._
 
 ## Known Bugs
 
