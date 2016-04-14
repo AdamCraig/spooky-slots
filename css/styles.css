@@ -1,8 +1,17 @@
+@font-face {
+  font-family: "zombie";
+  src: url(../fonts/zombiecontrol.ttf)
+}
+
 body {
-  font-family: 'Frijole', cursive;
+  font-family: 'Frijole', sans-serif;
   background: url(../img/nature-night-dark-tree.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
   color: white;
+  background-color: black;
 }
 
 #reelColumn1, #reelColumn2, #reelColumn3 {
@@ -15,6 +24,11 @@ body {
   padding-top: 20px;
 }
 
+#reelColumn1 img, #reelColumn2 img, #reelColumn3 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .winningsAlert {
   display: none;
   text-align: center;
@@ -24,6 +38,7 @@ body {
 
 .total-bank-roll {
   color: orange;
+  text-shadow: 10px 10px 10px black;
 }
 
 .reel3output {
@@ -33,91 +48,155 @@ body {
 #last-spin-winnings h2 {
   font-size: 2em;
   color: orange;
+    text-shadow: 10px 10px 10px black;
 }
 
-.legend {
-  text-align: center;
-}
+/*buttons start here*/
 
 #spin {
   font-size: 3em;
+  color: #4d004d;
   margin-top: 10px;
-  background-color: darkgrey;
-  color: #961C08;
+  background-color: transparent;
+  height: 230px;
+  width: 230px;
+  border-radius: 50%;
+  background-image: url(../img/moon.jpg);
+  background-size: 100% 100%;
 }
 
 #spin:hover {
-  background-color: #961C08;
-  color: black;
+  font-size: 3.5em;
 }
 
 #cash-out {
   font-size: 1em;
+  color: green;
+  text-shadow: 10px 0px 10px black;
   margin-top: 10px;
-  background-color: #0D5D17;
+  background-color: transparent;
+  background-image: url(../img/woodsign.jpg);
+  height: 100px;
+  width: 300px;
+  background-size: 100% 100%;
+}
+
+#cash-out:hover {
+  font-size: 1.1em;
 }
 
 #play-again {
-  font-size: 3em;
+  font-size: 2em;
+  color: white;
+  text-shadow: 10px 0px 10px black;
   margin-top: 10px;
-  margin-left: 50%;
+  background-color: transparent;
+  background-image: url(../img/woodsign.jpg);
+  height: 100px;
+  width: 300px;
+  background-size: 100% 100%;
 }
+
+/*buttons end here*/
+
+/*results start here*/
 
 #results {
   display: none;
 }
+
+.resultCashOut {
+  text-align: center;
+  margin-top: 700px;
+}
+
+.resultBust {
+  text-align: center;
+  color: #8B0000;
+  font-size: 100pt;
+  margin-top: 700px;
+}
+
+.finalBankRoll {
+  font-size: 50pt;
+  color: #8B0000;
+}
+
+.him {
+  color: white;
+}
+
+#spin-button h3 {
+  font-size: 25pt;
+  text-shadow: 10px 10px 10px black;
+}
+
+#total-bank-roll h1 {
+  text-shadow: 10px 10px 10px black;
+}
+
+#last-spin-winnings {
+  text-shadow: 10px 10px 10px black;
+}
+
+/*results end here*/
 
 img {
   max-width: 275px;
   height: 300px;
   width: auto;
 }
-.col-lg-8 {
-  background-color: #6726B2;
-  margin: 1px;
-  width: 200px;
-  height: 55px;
-  border: solid;
-  border-color: black;
-  border-width: medium;
-}
-.col-lg-4 {
-  background-color: #6726B2;
-  font-size: 90%;
-  padding-top: 4px;
-  margin: 1px;
-  width: 180px;
-  height: 55px;
-  text-align: center;
+
+/*legend starts here*/
+
+.col-xs-2 {
+  font-size: 16pt;
   padding-top: 6px;
-  border: solid;
-  border-color: black;
-  border-width: medium;
-  color: #c7d5d9;
 }
+
 .slotPayout {
   margin-top: 50px;
   background-color: black;
   color: white;
   text-align: center;
 }
+
 .slotImg {
   height: 45px;
   width: 45px;
+  display: inline;
 }
-.col-lg-4 {
-  font-size: 18pt;
+
+.container {
+  background-image: url(../img/legend.jpg);
+  background-repeat: round;
+  border-radius: 10pt;
+  text-align: center;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 10px black;
 }
-.legend {
-  margin-left: 30%;
+
+/*legend ends here*/
+
+.hideWhenCashoutOrBust {
+  margin-left: 9%;
 }
 
 #h1 {
-  font-size: 75pt;
+  font-family: zombie, sans-serif;
+  font-size: 100pt;
   text-align: center;
   color: white;
+  text-shadow: 10px 10px 10px darkred;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 #last-spin-winnings, #total-bank-roll, #spin-button {
   text-align: center;
+  max-width: 100%;
 }
