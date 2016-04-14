@@ -2,6 +2,8 @@ body {
   font-family: 'Frijole', cursive;
   background: url(../img/nature-night-dark-tree.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
   color: white;
 }
 
@@ -35,20 +37,21 @@ body {
   color: orange;
 }
 
-.legend {
-  text-align: center;
-}
-
 #spin {
   font-size: 3em;
+  color: #4d004d;
   margin-top: 10px;
-  background-color: darkgrey;
-  color: #961C08;
+  background-color: transparent;
+  height: 230px;
+  width: 230px;
+  border-radius: 50%;
+  background-image: url(../img/moon.jpg);
+  background-size: 100% 100%;
 }
 
 #spin:hover {
-  background-color: #961C08;
-  color: black;
+  /*background-color: #961C08;
+  color: black;*/
 }
 
 #cash-out {
@@ -72,44 +75,62 @@ img {
   height: 300px;
   width: auto;
 }
-.col-lg-8 {
-  background-color: #6726B2;
-  margin: 1px;
-  width: 200px;
-  height: 55px;
-  border: solid;
-  border-color: black;
-  border-width: medium;
-}
-.col-lg-4 {
-  background-color: #6726B2;
-  font-size: 90%;
-  padding-top: 4px;
-  margin: 1px;
-  width: 180px;
-  height: 55px;
-  text-align: center;
+
+.col-xs-2 {
+  font-size: 16pt;
   padding-top: 6px;
-  border: solid;
-  border-color: black;
-  border-width: medium;
-  color: #c7d5d9;
 }
+
+/*.col-xs-4 {
+  background-color: #6726B2;
+  margin: 1px;
+  /*width: 200px;
+  height: 55px;*/
+  /*border: solid;
+  border-color: black;*/
+  /*border-width: medium;*/
+  /*font-size: 18pt;
+}*/
+/*.col-xs-2 {
+  background-color: #6726B2;
+  font-size: 18pt;
+  margin: 1px;
+  /*width: 180px;
+  height: 55px;*/
+  /*text-align: center;*/
+  /*padding-top: 10px;*/
+  /*border: solid;
+  border-color: black;*/
+  /*border-width: medium;*/
+  /*color: #c7d5d9;
+}*/
+
 .slotPayout {
   margin-top: 50px;
   background-color: black;
   color: white;
   text-align: center;
 }
+
 .slotImg {
   height: 45px;
   width: 45px;
+  display: inline;
 }
-.col-lg-4 {
-  font-size: 18pt;
+
+.container {
+  background-image: url(../img/legend.jpg);
+  border-radius: 10pt;
+  text-align: center;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.legend {
-  margin-left: 30%;
+
+.hideWhenCashoutOrBust {
+  margin-left: 9%;
 }
 
 #h1 {

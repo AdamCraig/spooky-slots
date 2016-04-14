@@ -8,8 +8,8 @@ function Machine () {
   this.reel2 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "candy", "black cat", "witch", "bat", "bat"];
 
   this.reel3 = ["skull", "candy", "ghost", "bat", "witch", "pumpkin", "werewolf", "zombie", "vampire", "black cat", "grim reaper", "skull", "skull", "skull", "pumpkin", "pumpkin", "candy", "black cat", "witch", "zombie", "bat", "bat"];
-
 }
+
 function Player () {
    this.bankRoll = 20;
 }
@@ -145,11 +145,11 @@ $(document).ready(function() {
   $("#spin").click(function(event) {
     event.preventDefault();
 
-    $("#spin").hide().delay(10000).fadeIn();
-    $("#total-bank-roll").hide().delay(10000).fadeIn();
-    $("#last-spin-winnings").hide().delay(10000).fadeIn();
-    $(".legend").slideUp().delay(10000).slideDown();
-    $(".winningsAlert").delay(7300).fadeIn().delay(2700).slideUp();
+    $("#spin-button").hide().delay(9000).fadeIn();
+    $("#total-bank-roll").hide().delay(9000).fadeIn();
+    $("#last-spin-winnings").hide().delay(9000).fadeIn();
+    $(".container").slideUp().delay(9000).slideDown();
+    $(".winningsAlert").delay(7300).fadeIn().delay(1700).slideUp();
 
     if (newPlayer.bankRoll >= 1) {
       newPlayer.bankRoll -= 1;
