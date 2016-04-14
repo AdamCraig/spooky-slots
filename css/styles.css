@@ -1,19 +1,60 @@
-.jumbotron {
-  text-align: center;
+body {
+  font-family: 'Frijole', cursive;
+  background: url(../img/nature-night-dark-tree.jpg);
+  background-size: cover;
+  color: white;
 }
 
 #reelColumn1, #reelColumn2, #reelColumn3 {
   height: 400px;
-  border: solid black 2px;
-  background-color: gray;
+  border: solid black 5px;
+  border-radius: 5px;
+  background: linear-gradient(black,gray,white,gray,black);
+  margin: 3px;
+  text-align: center;
+  padding-top: 20px;
 }
-body {
-  font-family: 'Frijole', cursive;
+
+.winningsAlert {
+  display: none;
+  text-align: center;
+  font-size: 8em;
+  color: orange;
 }
+
+.total-bank-roll {
+  color: orange;
+}
+
+.reel3output {
+  text-align: center;
+}
+
+#last-spin-winnings h2 {
+  font-size: 2em;
+  color: orange;
+}
+
+.legend {
+  text-align: center;
+}
+
 #spin {
   font-size: 3em;
   margin-top: 10px;
-  margin-left: 50%;
+  background-color: darkgrey;
+  color: #961C08;
+}
+
+#spin:hover {
+  background-color: #961C08;
+  color: black;
+}
+
+#cash-out {
+  font-size: 1em;
+  margin-top: 10px;
+  background-color: #0D5D17;
 }
 
 #play-again {
@@ -27,11 +68,12 @@ body {
 }
 
 img {
+  max-width: 275px;
   height: 300px;
   width: auto;
 }
 .col-lg-8 {
-  background-color: #764FE8;
+  background-color: #6726B2;
   margin: 1px;
   width: 200px;
   height: 55px;
@@ -40,15 +82,18 @@ img {
   border-width: medium;
 }
 .col-lg-4 {
-  background-color: #764FE8;
+  background-color: #6726B2;
+  font-size: 90%;
+  padding-top: 4px;
   margin: 1px;
-  width: 150px;
+  width: 180px;
   height: 55px;
   text-align: center;
-
+  padding-top: 6px;
   border: solid;
   border-color: black;
   border-width: medium;
+  color: #c7d5d9;
 }
 .slotPayout {
   margin-top: 50px;
@@ -56,7 +101,7 @@ img {
   color: white;
   text-align: center;
 }
-.slotImg{
+.slotImg {
   height: 45px;
   width: 45px;
 }
@@ -66,12 +111,13 @@ img {
 .legend {
   margin-left: 30%;
 }
+
 #h1 {
-  font-size: 120pt;
+  font-size: 75pt;
   text-align: center;
   color: white;
 }
-.jumbotron {
-  background: linear-gradient(black,#400054,#6D00AB,#5000D1,black);
 
+#last-spin-winnings, #total-bank-roll, #spin-button {
+  text-align: center;
 }
