@@ -11,7 +11,7 @@ function Machine () {
 }
 
 function Player () {
-   this.bankRoll = 20;
+   this.bankRoll = 1;
 }
 
 
@@ -178,24 +178,31 @@ $(document).ready(function() {
   $("#spin").click(function(event) {
     event.preventDefault();
 
-    $("#spin-button").hide().delay(9000).fadeIn();
-    $("#total-bank-roll").hide().delay(9000).fadeIn();
-    $("#last-spin-winnings").hide().delay(9000).fadeIn();
-    $(".container").slideUp().delay(9000).slideDown();
-    $(".winningsAlert").delay(7300).fadeIn().delay(1690).slideUp();
+    if (newPlayer.bankRoll <= 0) {
+    $("body").css("background-image", "url('../spooky-slots/img/reaper.jpg')");
+     $(".hideWhenCashoutOrBust").hide();
+     $(".container").hide();
+     $("#results").show();
+     $(".resultCashOut").hide();
 
-    var slotPull = new Audio('audio/slotPull.mp3');
-    var wheelStop12 = new Audio('audio/wheel stop 1 2.mp3');
-    var wheelStop3 = new Audio('audio/wheel stop 3.mp3');
-
-    slotPull.play();
-
-    setTimeout(function() { wheelStop12.play(); }, 3500);
-    setTimeout(function() { wheelStop12.play(); }, 4900);
-    setTimeout(function() { wheelStop3.play(); }, 6300);
-
-    if (newPlayer.bankRoll >= 1) {
+   } else if (newPlayer.bankRoll >= 1) {
       newPlayer.bankRoll -= 1;
+
+      $("#spin-button").hide().delay(9000).fadeIn();
+      $("#total-bank-roll").hide().delay(9000).fadeIn();
+      $("#last-spin-winnings").hide().delay(9000).fadeIn();
+      $(".container").slideUp().delay(9000).slideDown();
+      $(".winningsAlert").delay(7300).fadeIn().delay(1690).slideUp();
+
+      var slotPull = new Audio('audio/slotPull.mp3');
+      var wheelStop12 = new Audio('audio/wheel stop 1 2.mp3');
+      var wheelStop3 = new Audio('audio/wheel stop 3.mp3');
+
+      slotPull.play();
+
+      setTimeout(function() { wheelStop12.play(); }, 3500);
+      setTimeout(function() { wheelStop12.play(); }, 4900);
+      setTimeout(function() { wheelStop3.play(); }, 6300);
 
       reel1Counter = 0;
       reel2Counter = 0;
@@ -226,15 +233,9 @@ $(document).ready(function() {
 
       $(".reel3output").fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn().delay(1).fadeOut().delay(1).fadeIn();
 
-      if (newPlayer.bankRoll >= 1) {
-        var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
-        $(".total-bank-roll").text("$" + newPlayer.bankRoll);
-        $(".last-spin-winnings").text(checkCurrentWinAmount);
-      } else {
-        $(".hideWhenCashoutOrBust").hide();
-        $("#results").show();
-        $(".resultCashOut").hide();
-      }
+      var checkCurrentWinAmount = newMachine.winningCombo(reel1Result, reel2Result, reel3Result, newPlayer);
+      $(".total-bank-roll").text("$" + newPlayer.bankRoll);
+      $(".last-spin-winnings").text(checkCurrentWinAmount);
     }
   });
 
@@ -243,6 +244,8 @@ $(document).ready(function() {
   });
 
   $("#cash-out").click(function(event) {
+    $("body").css("background-image", "url('../spooky-slots/img/slenderman.jpg')");
+    $(".container").hide();
     $(".hideWhenCashoutOrBust").hide();
     $("#results").show();
     $(".resultBust").hide();
