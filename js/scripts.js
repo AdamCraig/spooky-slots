@@ -237,7 +237,7 @@ $(document).ready(function() {
       $(".container").slideUp().delay(9000).slideDown();
       $(".winningsAlert").delay(7300).fadeIn().delay(1690).slideUp();
 
-      var slotPull = new Audio('audio/slotPull.mp3');
+      var slotPull = new Audio('audio/slotpull.mp3');
       var wheelStop12 = new Audio('audio/wheel stop 1 2.mp3');
       var wheelStop3 = new Audio('audio/wheel stop 3.mp3');
 
