@@ -33,8 +33,11 @@ _HTML, CSS, Bootstrap, JavaScript, jQuery_
 ##GitHub Pages Link
 
 _http://adamcraig.github.io/spooky-slots_
+
 _http://tommyinseason.github.io/spooky-slots_
+
 _http://nicklyman.github.io/spooky-slots_
+
 _http://ashleyraymaceli.github.io/spooky-slots_
 
 ### License
