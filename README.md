@@ -16,7 +16,7 @@ elements created almost entirely in JavaScript._
 
 ## Known Bugs
 
-_No known bugs at this time._
+_On mobile devices (which take longer to load and thus are not properly synced with our timer functions), the slots usually do not show the proper images (i.e images indicate that a user won when they really lost, etc.)._
 
 ## Support and contact details
 
@@ -33,6 +33,9 @@ _HTML, CSS, Bootstrap, JavaScript, jQuery_
 ##GitHub Pages Link
 
 _http://adamcraig.github.io/spooky-slots_
+_http://tommyinseason.github.io/spooky-slots_
+_http://nicklyman.github.io/spooky-slots_
+_http://ashleyraymaceli.github.io/spooky-slots_
 
 ### License
 
