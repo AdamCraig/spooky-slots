@@ -1,3 +1,5 @@
+![Spooky Slots](screenshot1.png)
+
 # _Spooky-Slots_
 
 #### _An interactive web app that recreates a pull slot machine game._
